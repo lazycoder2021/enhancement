@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+
+        .container {
+            margin-left: 20px;
+        }
+
+
+        .ps-script {
+            background: black;
+            color: white;
+            margin-top: 30px;
+            height: 45px;
+            font-size: 20px;
+            width: 600px;
+        }
+
+            .ps-script span {
+                display: inline-block;
+                float: right;
+                font-size: 16px;
+                margin-right: 10px;
+                cursor: pointer;
+            }
+
+
+            @media only screen and (max-width:500px){
+                .ps-script {
+                    background: black;
+                    color: white;
+                    margin-top: 30px;
+                    height: 45px;
+                    font-size: 20px;
+                    width: 400px;
+                    height:auto;
+                }
+
+                .container {
+                    margin-left: 5px;
+                }
+            }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="wrapper">
+            <img src="gif_test.gif" />
+        </div>
+
+
+        <div class="ps-script">
+            <span onclick="copyToClipboard(document.querySelector('.ps_script').innerHTML)">Copy</span>
+            <code class="ps_script">Get-MsolUser -UnlicensedUsersOnly</code>
+        </div>
+
+
+        <div class="ps-script">
+            <span onclick="copyToClipboard(document.querySelector('.ps_script1').innerHTML)">Copy</span>
+            <code class="ps_script1">Get-MsolUser -UserPrincipalName tks@w4l0s.onmicrosoft.com</code>
+        </div>
+    </div>
+
+
+    <script>
+        function copyToClipboard(text) {
+            window.prompt("Use Ctrl+C", text)
+        }
+
+    </script>
+    
+</body>
+</html>
